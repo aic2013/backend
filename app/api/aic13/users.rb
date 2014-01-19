@@ -2,7 +2,7 @@ class AIC13::Users < Grape::API
   resource :users do
     desc "Returns valid connection types for further use"
     params do
-      required :topics, type: Array, desc: 'List of topic names'
+      requires :topics, type: Array, desc: 'List of topic names'
       optional :depth, type: Integer, desc: 'Search depth. Default: 2 (Friends of friends)'
     end
     get :topics do
