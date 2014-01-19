@@ -33,7 +33,10 @@ group :doc do
 end
 
 gem 'grape'
+gem 'grape-kaminari'
 gem 'grape-swagger'
+
+gem 'faker'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
