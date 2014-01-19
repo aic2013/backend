@@ -35,6 +35,9 @@ GEM
       i18n
       rake (>= 10.0.0)
       sshkit (>= 0.0.23)
+    capistrano-rvm (0.1.1)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.0.1)
@@ -162,6 +165,7 @@ PLATFORMS
 
 DEPENDENCIES
   capistrano
+  capistrano-rvm
   coffee-rails (~> 4.0.0)
   grape
   grape-swagger
