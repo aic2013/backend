@@ -5,6 +5,7 @@ class API < Grape::API
   # Cross-Origin Resource Sharing
   before do
     header['Access-Control-Allow-Origin'] = '*'
+    header['Access-Control-Expose-Headers'] = 'X-Total, X-Total-Pages, X-Page, X-Per-Page'
     header['Access-Control-Request-Method'] = '*'
   end
 
