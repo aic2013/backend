@@ -1,6 +1,7 @@
 class API < Grape::API
   version 'v1', using: :header, vendor: 'aic13'
   format :json
+  formatter :json, Grape::Formatter::ActiveModelSerializers
 
   # Cross-Origin Resource Sharing
   before do
@@ -11,7 +12,4 @@ class API < Grape::API
 
   mount AIC13::Config
   mount AIC13::Users
-
-  # Documentation
-  add_swagger_documentation({ markdown: true })
 end

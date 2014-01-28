@@ -11,9 +11,7 @@ class AIC13::Users < Grape::API
       optional :page, type: Integer, desc: 'Page'
     end
     get :topics do
-      users = ::Kaminari::PaginatableArray.new User.fake_user_data
-
-      paginate(users)
+      paginate TwitterUser.all
     end
 
     desc 'Configures variables for determining interesting ads'
@@ -25,9 +23,7 @@ class AIC13::Users < Grape::API
       optional :page, type: Integer, desc: 'Page'
     end
     get :suggestions do
-      users = ::Kaminari::PaginatableArray.new User.fake_user_data
-
-      paginate(users)
+      paginate TwitterUser.all
     end
   end
 end
