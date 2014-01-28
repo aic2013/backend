@@ -37,7 +37,7 @@ gem 'grape'
 gem 'grape-kaminari'
 gem 'grape-active_model_serializers'
 
-gem 'faker'
+gem 'neo4j', '~> 3.0.0.alpha.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

@@ -15,6 +15,7 @@ class AIC13::Config < Grape::API
     params do
       optional :depth, type: Integer, desc: 'Search depth. Default: 2 (Friends of friends)'
     end
+
     post :ads do
 
     end

@@ -10,6 +10,9 @@ GEM
       erubis (~> 2.7.0)
       rack (~> 1.5.2)
       rack-test (~> 0.6.2)
+    active_attr (0.8.2)
+      activemodel (>= 3.0.2, < 4.1)
+      activesupport (>= 3.0.2, < 4.1)
     active_model_serializers (0.8.1)
       activemodel (>= 3.0)
     activemodel (4.0.2)
@@ -53,8 +56,6 @@ GEM
     equalizer (0.0.8)
     erubis (2.7.0)
     execjs (2.0.2)
-    faker (1.2.0)
-      i18n (~> 0.5)
     grape (0.6.1)
       activesupport
       builder
@@ -73,6 +74,9 @@ GEM
       kaminari
     hashie (2.0.5)
     hike (1.2.3)
+    httparty (0.12.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.9)
     ice_nine (0.10.0)
     jbuilder (1.5.3)
@@ -93,9 +97,23 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_xml (0.5.5)
+    neo4j (3.0.0.alpha.3)
+      active_attr (~> 0.8)
+      activemodel (~> 4.0.0)
+      neo4j-core (= 3.0.0.alpha.8)
+      orm_adapter (~> 0.4.0)
+      railties (~> 4.0.0)
+    neo4j-core (3.0.0.alpha.8)
+      httparty
+      json
+      neo4j-cypher
+      os
+    neo4j-cypher (1.0.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
+    orm_adapter (0.4.1)
+    os (0.9.6)
     pg (0.17.1)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -177,12 +195,12 @@ DEPENDENCIES
   capistrano
   capistrano-rvm
   coffee-rails (~> 4.0.0)
-  faker
   grape
   grape-active_model_serializers
   grape-kaminari
   jbuilder (~> 1.2)
   jquery-rails
+  neo4j (~> 3.0.0.alpha.3)
   pg
   rack-cors
   rails (= 4.0.2)
