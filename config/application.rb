@@ -31,7 +31,9 @@ module Backend
         allow do
             origins '*'
             # location of your API
-            resource '/*', headers: :any, methods: [:get, :post, :options, :put]
+            resource '/*',  headers: :any,
+                            expose: ['X-Total', 'X-Total-Pages', 'X-Page', 'X-Per-Page'],
+                            methods: [:get, :post, :options, :put]
         end
     end
   end

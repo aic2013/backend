@@ -3,14 +3,6 @@ class API < Grape::API
   format :json
   formatter :json, Grape::Formatter::ActiveModelSerializers
 
-  # Cross-Origin Resource Sharing
-  before do
-    header['Access-Control-Allow-Origin'] = 'aic13.mmuehlberger.com'
-    header['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
-    header['Access-Control-Expose-Headers'] = 'X-Total, X-Total-Pages, X-Page, X-Per-Page'
-    header['Access-Control-Request-Method'] = '*'
-  end
-
   mount AIC13::Config
   mount AIC13::Users
 end
