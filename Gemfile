@@ -31,6 +31,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem 'grape'
 gem 'grape-kaminari'
 gem 'grape-active_model_serializers'
