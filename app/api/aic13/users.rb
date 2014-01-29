@@ -11,7 +11,12 @@ class AIC13::Users < Grape::API
       optional :page, type: Integer, desc: 'Page'
     end
     get :topics do
-      paginate TwitterUser.all
+      topic = Topic.find(params['topics'])
+      if topic
+        paginate topic.interested_users
+      else
+        {}
+      end
     end
 
     desc 'Configures variables for determining interesting ads'
@@ -23,7 +28,9 @@ class AIC13::Users < Grape::API
       optional :page, type: Integer, desc: 'Page'
     end
     get :suggestions do
-      paginate TwitterUser.all
+      nodes = NEO4J.execute_query "START n = node(*) MATCH u-[f:FOLLOWS]->n-[r]->(t:Topic) WITH n, COUNT(f) AS foll, SUM(r.count) AS rs, COUNT(r) as rc WHERE rs > 0 AND (rc/rs) > #{params[:min_range] || 0.0} AND (rc/rs) < #{params[:max_range] || 1.0} RETURN n, rc, rs, (rc/rs), foll ORDER BY foll DESC LIMIT 100"
+
+      paginate TwitterUser.where(id: nodes['data'].map { |u| u.first['data']['id'] })
     end
   end
 end
