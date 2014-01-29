@@ -11,11 +11,11 @@ class AIC13::Users < Grape::API
       optional :page, type: Integer, desc: 'Page'
     end
     get :topics do
-      topic = Topic.find(params['topics'])
-      if topic
-        paginate topic.interested_users
-      else
+      users = Topic.interested_users(params[:topics], params[:depth] || 2)
+      if users.empty?
         {}
+      else
+        paginate users
       end
     end
 
