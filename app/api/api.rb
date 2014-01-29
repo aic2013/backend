@@ -3,6 +3,7 @@ class API < Grape::API
   format :json
   formatter :json, Grape::Formatter::ActiveModelSerializers
 
+  mount AIC13::Ads
   mount AIC13::Config
   mount AIC13::Users
 end

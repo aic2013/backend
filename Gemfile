@@ -38,6 +38,7 @@ gem 'grape-kaminari'
 gem 'grape-active_model_serializers'
 
 gem 'neography'
+gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

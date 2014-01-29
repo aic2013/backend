@@ -1,0 +1,12 @@
+development:
+  sessions:
+    default:
+      database: backend_production
+      hosts:
+        - mongodb.aic13.mmuehlberger.com:27017
+production:
+  sessions:
+    default:
+      database: backend_production
+      hosts:
+        - mongodb.aic13.mmuehlberger.com:27017
